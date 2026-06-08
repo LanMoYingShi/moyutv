@@ -80,3 +80,6 @@ app/src/main/java/com/iptv/tvplayer/data/PlaylistParser.kt
 
 # 4. EPG 模糊匹配调度算法
 app/src/main/java/com/iptv/tvplayer/data/EpgManager.kt
+
+# 5. 整个 main 源码目录隔离保护 (防止泄露至公共仓库)
+app/src/main/
