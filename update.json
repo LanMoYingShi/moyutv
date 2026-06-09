@@ -2,5 +2,5 @@
   "versionCode": 2,
   "versionName": "1.0.1",
   "updateUrl": "https://raw.githubusercontent.com/sfee1212/moyutv/main/app-release.apk",
-  "updateInfo": "1. 新增全屏触控手势换台与长按呼出设置\n2. 增加手动添加订阅与本地M3U文件导入\n3. 更新了更稳定的新版 EPG 地址\n4. 支持软件内自动在线升级"
+  "updateInfo": "1. 新增“软件解码”模式，提高老旧设备系统的兼容性\n2. 修正二维码 IP 探测\n3. 优化 WebView 配置，保障安卓 5.1、鸿蒙等老旧设备流畅播放\n4. 支持软件内自动在线升级"
 }
