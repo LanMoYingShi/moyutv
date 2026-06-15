@@ -1,6 +1,6 @@
 {
-  "versionCode": 8,
+  "versionCode": 108,
   "versionName": "1.0.8",
-  "updateUrl": "https://gh-proxy.com/https://github.com/sfee1212/moyutv/releases/download/v1.0.8/moyu_v1.0.8.apk",
-  "updateInfo": "1. 局域网网页除了能传“链接”，还新增“上传文件”按钮。您可以在手机上选一个本地的 .txt / .m3u 或 .js 文件，点击上传,会自动保存进 摸鱼tv 的对应文件夹中。\n2. App 启动后只要拿到存储权限，就会在电视机根目录（/sdcard/）自动建好 摸鱼tv/list 和 摸鱼tv/js。"
+  "updateUrl": "https://gh-proxy.com/https://github.com/sfee1212/moyutv/releases/download/v1.0.8/moyu1.0.8.apk",
+  "updateInfo": "1. 修复导入本地列表文件功能。\n2. socks5代理全面启用新格式 sk://ip:port&需要代理的原始源链接。\n3.提升解码兼容性。 "
 }
