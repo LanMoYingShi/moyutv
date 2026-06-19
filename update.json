@@ -1,6 +1,6 @@
 {
-  "versionCode": 108,
-  "versionName": "1.0.8",
-  "updateUrl": "https://gh-proxy.com/https://github.com/sfee1212/moyutv/releases/download/v1.0.8/moyu1.0.8.apk",
-  "updateInfo": "1. 修复导入本地列表文件功能。\n2. socks5代理全面启用新格式 sk://ip:port&需要代理的原始源链接。\n3.提升解码兼容性。 "
+  "versionCode": 109,
+  "versionName": "1.0.9",
+  "updateUrl": "https://gh-proxy.com/https://github.com/sfee1212/moyutv/releases/download/v1.0.9/moyu_v1.0.9.apk",
+  "updateInfo": "1. 优化WebView，可以选择下载X5内核。\n2. 优化SK5代理播放。\n3.优化MPV解码。 "
 }
