@@ -148,7 +148,7 @@ webview://https://edu.cctv.com/cetv/
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://logo.catvod.com/凤凰资讯.png" group-title="卫视",凤凰资讯
 https://www.809899.xyz/api/fh.php?id=fhzx
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://logo.catvod.com/凤凰中文.png" group-title="卫视",凤凰中文
-https://www.809899.xyz/api/fh.php?id=fhzw
+http://www.809899.xyz/api/fh.js/fhzx
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://logo.catvod.com/凤凰香港.png" group-title="卫视",凤凰香港
 https://www.809899.xyz/api/fh.php?id=fhhk
 #EXTINF:-1 tvg-name="香港卫视" tvg-logo="https://logo.catvod.com/香港卫视.png" group-title="卫视",香港卫视
