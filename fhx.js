@@ -30,6 +30,9 @@ function postJson(urlStr, jsonBody) {
         var conn = url.openConnection();
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+        conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Linux; Android 10; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.181 Mobile Safari/537.36");
+        conn.setRequestProperty("Referer", "https://m.fengshows.com/");
+        conn.setRequestProperty("Origin", "https://m.fengshows.com");
         conn.setDoOutput(true);
         conn.setDoInput(true);
         conn.setConnectTimeout(5000);
