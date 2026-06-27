@@ -1,6 +1,6 @@
 const PHONE_PREFIX = "86";
-const PHONE = "您的凤凰秀手机号"; // 在这里填入您的凤凰秀手机号
-const PWD = "您的凤凰秀密码";     // 在这里填入您的凤凰秀密码
+const PHONE = "替换成您的手机号"; // 在这里填入您的凤凰秀手机号
+const PWD = "替换成您的密码";     // 在这里填入您的凤凰秀密码
 
 function readToken() {
     try {
@@ -71,7 +71,7 @@ function validateJWT(token) {
         if (!exp) return true;
         
         var now = Math.floor(java.lang.System.currentTimeMillis() / 1000);
-        return exp > (now + 300);
+        return exp > (now + 300); // 预留5分钟过期缓冲
     } catch (e) {
         return false;
     }
@@ -118,13 +118,13 @@ function getPlayUrl(args) {
     if (!chid) return "";
 
     var token = "";
-    var quality = "hd"; 
+    var quality = "hd"; // 降级兜底画质
     
-
+    // 只有当用户真的填写了账号密码，才走登录逻辑
     if (PHONE !== "替换成您的手机号" && PWD !== "替换成您的密码") {
         token = getToken();
         if (token) {
-            quality = "fhd";
+            quality = "fhd"; // 拿到Token后尝试请求1080P全高清
         }
     }
 
@@ -140,15 +140,17 @@ function getPlayUrl(args) {
         headers["Token"] = token;
     }
 
+    var headerAppend = '|User-Agent=Mozilla/5.0 (Linux; Android 10; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.181 Mobile Safari/537.36&Referer=https://m.fengshows.com/&Origin=https://m.fengshows.com';
+
     try {
         var responseText = HttpBridge.fetchWithHeaders(apiUrl, JSON.stringify(headers));
         if (responseText) {
             var data = JSON.parse(responseText);
             if (data && data.data && data.data.live_url) {
-                return data.data.live_url;
+                return data.data.live_url + headerAppend;
             } else if (quality === 'fhd') {
-
-                var fallbackUrl = 'https://m.fengshows.com/api/v3/hub/live/auth-url?live_id=' + chid;
+                // 如果是请求全高清失败（比如账号不是会员鉴权不过），降级使用 hd 无鉴权请求一次
+                var fallbackUrl = 'https://m.fengshows.com/api/v3/hub/live/auth-url?live_qa=hd&live_id=' + chid;
                 var fallbackHeaders = {
                     "User-Agent": "Mozilla/5.0 (Linux; Android 10; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.181 Mobile Safari/537.36",
                     "Referer": "https://m.fengshows.com/",
@@ -158,13 +160,13 @@ function getPlayUrl(args) {
                 if (fallbackRes) {
                     var fbData = JSON.parse(fallbackRes);
                     if (fbData && fbData.data && fbData.data.live_url) {
-                        return fbData.data.live_url;
+                        return fbData.data.live_url + headerAppend;
                     }
                 }
             }
         }
     } catch (e) {
-
+        // 忽略异常
     }
     
     return "";
