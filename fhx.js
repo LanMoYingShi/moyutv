@@ -118,9 +118,9 @@ function getPlayUrl(args) {
     if (!chid) return "";
 
     var token = "";
-    var quality = "hd";
+    var quality = "hd"; 
     
-
+    // 只有当用户真的填写了账号密码，才走登录逻辑
     if (PHONE !== "替换成您的手机号" && PWD !== "替换成您的密码") {
         token = getToken();
         if (token) {
@@ -145,7 +145,8 @@ function getPlayUrl(args) {
         if (responseText) {
             var data = JSON.parse(responseText);
             if (data && data.data && data.data.live_url) {
-                return data.data.live_url + "|User-Agent=Mozilla/5.0 (Linux; Android 10; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.181 Mobile Safari/537.36&Referer=https://www.fengshows.com/live";
+                var m3u8Url = data.data.live_url.replace(".flv?", ".m3u8?");
+                return m3u8Url + "|User-Agent=Mozilla/5.0 (Linux; Android 10; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.181 Mobile Safari/537.36&Referer=https://www.fengshows.com/live";
             } else if (quality === 'fhd') {
 
                 var fallbackUrl = 'https://api.fengshows.cn/hub/live/auth-url?live_qa=hd&live_id=' + chid;
@@ -158,7 +159,8 @@ function getPlayUrl(args) {
                 if (fallbackRes) {
                     var fbData = JSON.parse(fallbackRes);
                     if (fbData && fbData.data && fbData.data.live_url) {
-                        return fbData.data.live_url + "|User-Agent=Mozilla/5.0 (Linux; Android 10; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.181 Mobile Safari/537.36&Referer=https://www.fengshows.com/live";
+                        var fbM3u8Url = fbData.data.live_url.replace(".flv?", ".m3u8?");
+                        return fbM3u8Url + "|User-Agent=Mozilla/5.0 (Linux; Android 10; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.181 Mobile Safari/537.36&Referer=https://www.fengshows.com/live";
                     }
                 }
             }
