@@ -1,6 +1,6 @@
 const PHONE_PREFIX = "86";
-const PHONE = "替换成您的手机号"; // 在这里填入您的凤凰秀手机号
-const PWD = "替换成您的密码";     // 在这里填入您的凤凰秀密码
+const PHONE = "18062763898"; // 在这里填入您的凤凰秀手机号
+const PWD = "li123123";     // 在这里填入您的凤凰秀密码
 
 function readToken() {
     try {
