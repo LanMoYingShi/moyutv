@@ -1,6 +1,6 @@
 {
-  "versionCode": 115,
-  "versionName": "1.1.5",
-  "updateUrl": "https://gh-proxy.com/https://github.com/sfee1212/moyutv/releases/download/v1.1.5/_v1.1.5.apk",
-  "updateInfo": "1. UI增加节目信息展示。\n2. 彻底移除内置节目。\n3. 其他修缮。 "
+  "versionCode": 116,
+  "versionName": "1.1.6",
+  "updateUrl": "https://gh-proxy.com/https://github.com/sfee1212/moyutv/releases/download/v1.1.6/moyu_v1.1.6.apk",
+  "updateInfo": "1.ExoPlayer 引擎增强，秒播优化。\n2.MPV 引擎增强，恢复完整的高级渲染，加速解码流程。\n3. 其他修缮。 "
 }
